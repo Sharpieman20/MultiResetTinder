@@ -252,7 +252,8 @@ class Instance(ConditionalTransitionable):
             return
         for dir_name in os.listdir(self.mcdir + "/saves"):
             # TODO - i think this should be like "Attempt #X" or something cuz of duncan mod
-            if dir_name.startswith("New World"):
+            # It is counted as "Speedrun #" - OutlanderForge
+            if dir_name.startswith("Speedrun #"):
                 try:
                     shutil.move(self.mcdir + "/saves/" + dir_name,
                                 old_worlds + f"/{uuid.uuid1()}")
