@@ -281,6 +281,7 @@ def pause_background():
         inst.pause()
 
 def toggle_hotkeys():
+    # TODO @Sharpieman20 - toggle listening on/off if game is focused
     print("Toggle Hotkeys")
     global listening
     listening = not listening
