@@ -30,7 +30,8 @@
     "min-time-for-settings-reset": 999999.0,
     "min-time-from-reset-to-world-entry": 2.0,
     "num-instances": 3,
-    "max-concurrent": 2,
+    "max-concurrent": 3,
+    "max-concurrent-in-run": 2,
     "max-concurrent-boot": 1,
     "unfrozen-queue-size": 0,
     "obs-enabled": true,
@@ -42,6 +43,6 @@
     "auto-pause": true,
     "prio-booting-over-worldgen": true,
     "only-focus-ready": true,
-    "default-ahk-background": true
+    "default-ahk-background": false
 }
 
