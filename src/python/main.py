@@ -295,9 +295,19 @@ if __name__ == "__main__":
     # TODO @Sharpieman20 - add more good assertions
     # TODO @Sharpieman20 - add error messages explaining
     assert unfrozen_queue_size < max_concurrent_global
+    print("Launching programs")
     launch.launch_all_programs()
-    input("Press any key to continue...")
+    if not settings.is_test_mode():
+        time.sleep(5)
+    print("Connecting to OBS")
     obs.connect_to_stream_obs()
+    obs.connect_to_recording_obs()
+    time.sleep(1)
+    print("Configuring OBS")
+    obs.setup_stream_obs()
+    obs.setup_recording_obs()
+    input("Initialization complete. Press any key to begin session\n")
+    print("Macro has started")
     obs.hide_all()
     kb.on_press_key(settings.get_hotkeys()['reset-active'], wrap(reset_primary))
     kb.on_press_key(settings.get_hotkeys()['reset-focused'], wrap(reset_focused))
