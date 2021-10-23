@@ -19,8 +19,6 @@ def has_passed(start_time, duration):
     return (get_time() - start_time) > duration
 
 def get_pids():
-    if settings.is_test_mode() or not settings.is_ahk_enabled():
-        return list(inst for inst in queues.get_all_instances() if inst.pid != -1)
     all_pids = []
     for process in psutil.process_iter():
         if 'java' in process.name().lower():

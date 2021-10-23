@@ -23,7 +23,8 @@
         "port": 4445,
         "password": "password"
     },
-
+    "recording-instance-width": 320,
+    "recording-instance-height": 180,
     "freeze-delay": 500,
     "unfreeze-delay": 500,
     "fullscreen-delay": 50,
@@ -49,6 +50,6 @@
     "auto-pause": true,
     "prio-booting-over-worldgen": true,
     "only-focus-ready": true,
-    "default-ahk-background": false
+    "parallelize-ahk": true
 }
 
