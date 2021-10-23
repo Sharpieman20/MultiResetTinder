@@ -2,3 +2,5 @@ ahk
 obs-websocket-py
 keyboard
 psutil
+pynput
+win32process

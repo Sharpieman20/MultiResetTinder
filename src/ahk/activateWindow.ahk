@@ -1,5 +1,4 @@
 #Persistent
-#WinActivateForce
 WinSet, AlwaysOnTop, On, ahk_pid %pid%
 Sleep, %switchDelay%
 send {LButton}
