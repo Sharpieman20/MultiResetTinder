@@ -102,17 +102,16 @@ def main_loop(sc):
             if inst.pid != old_pid:
                 inst.mark_booting()
             break
-    
+
     # Handle booting instances
     for inst in queues.get_booting_instances():
-        if not inst.is_done_booting():
-            continue
-        if not settings.should_auto_launch():
-            inst.suspend()
-            inst.release()
-        else:
-            inst.mark_generating()
-            inst.initialize_after_boot(queues.get_all_instances())
+        if settings.should_auto_launch():
+            if inst.pid == -1:
+                old_pid = inst.pid
+                inst.assign_pid(queues.get_all_instances())
+            if inst.is_done_booting():
+                inst.mark_generating()
+                inst.initialize_after_boot(queues.get_all_instances())
 
     if not settings.should_auto_launch():
         if len(free_instances) < settings.get_num_instances():
