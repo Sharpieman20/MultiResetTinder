@@ -5,6 +5,7 @@ if (%maximize%) {
 WinSet, AlwaysOnTop, On, ahk_pid %pid%
 Sleep, %switchDelay%
 send {LButton}
+Sleep, %switchDelay%
 WinSet, AlwaysOnTop, Off, ahk_pid %pid%
 if (%borderless%) {
     WinSet, Style, -0xCF0000, ahk_pid %pid%
